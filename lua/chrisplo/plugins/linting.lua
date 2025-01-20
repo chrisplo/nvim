@@ -22,13 +22,16 @@ return {
 			"predeclared,usestdlibvars,misspell,gocyclo,goconst,gocognit,dupl,copyloopvar",
 			"--build-tags",
 			"test,testing",
-			"--tests=true",
+			"--tests",
 			"--out-format",
 			"json",
 			"--show-stats=false",
 			"--print-issued-lines=false",
 			"--print-linter-name=false",
 			function()
+				-- gets full file name of current buffer
+				-- see with :echo nvim_buf_get_name(0)
+				-- then drops the trailing slash with :h
 				return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), ":h")
 			end,
 		}

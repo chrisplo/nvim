@@ -21,9 +21,10 @@ return {
 					"gopls",
 					"bashls",
 					"lua_ls",
+					-- vim-helm dependency is setup in lspconfig
+					"helm_ls",
 					"yamlls",
 					"jqls",
-					"helm_ls",
 				},
 			})
 			mason_tool_installer.setup({

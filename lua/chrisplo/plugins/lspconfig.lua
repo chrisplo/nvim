@@ -1,4 +1,6 @@
 return {
+	-- vim-helm is needed for helm_ls
+	{ "towolf/vim-helm", ft = "helm" },
 	{
 		"neovim/nvim-lspconfig",
 		event = { "BufReadPre", "BufNewFile" },
@@ -85,6 +87,14 @@ return {
 				function(server_name)
 					lspconfig[server_name].setup({
 						capabilities = capabilities,
+					})
+				end,
+				-- needs vim-helm registered to helm file type above
+				["helm_ls"] = function()
+					lspconfig["helm_ls"].setup({
+						settings = {
+							["helm-ls"] = { yamlls = { path = "yaml-language-server" } },
+						},
 					})
 				end,
 				-- gopls lspconfig handler for setup for gopls will get reference to the lspconfig for gopls then set it up
