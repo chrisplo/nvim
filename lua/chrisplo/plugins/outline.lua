@@ -7,11 +7,11 @@ return {
 			preview_window = {
 				auto_preview = true,
 				open_hover_on_preview = true,
-				width = 80,
+				width = 60,
 				height = 60, -- relative
 				relative_width = false,
 			},
-			width = 30,
+			width = 20,
 			-- focus_on_open = false,
 			relative_width = false,
 		},
